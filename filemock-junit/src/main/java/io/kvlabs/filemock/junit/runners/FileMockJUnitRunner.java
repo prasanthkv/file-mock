@@ -13,7 +13,7 @@ import org.junit.runner.notification.RunNotifier;
  *
  * @author kanchana-prasanth
  */
-public class FileToMockJUnitRunner extends Runner implements Filterable {
+public class FileMockJUnitRunner extends Runner implements Filterable {
 
     private static boolean newJUnitVersion;
 
@@ -35,7 +35,7 @@ public class FileToMockJUnitRunner extends Runner implements Filterable {
      * @throws InvocationTargetException
      * @throws InitializationError
      */
-    public FileToMockJUnitRunner(Class<?> klass) throws InvocationTargetException, InitializationError {
+    public FileMockJUnitRunner(Class<?> klass) throws InvocationTargetException, InitializationError {
         if (newJUnitVersion) {
             runner = new JUnitOldVersionRunner(klass);
         } else {

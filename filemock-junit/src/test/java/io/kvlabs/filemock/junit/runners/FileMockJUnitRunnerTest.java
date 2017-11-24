@@ -16,8 +16,8 @@ import io.kvlabs.filemock.core.anotation.MockFile;
  *
  * @author kanchana
  */
-@RunWith(FileToMockJUnitRunner.class)
-public class FileToMockJUnitRunnerTest {
+@RunWith(FileMockJUnitRunner.class)
+public class FileMockJUnitRunnerTest {
 
     @MockFile(path = "/META-INF/mock/sample_pojo_more.json")
     Jackson1SamplePojo jackson1SamplePojo;

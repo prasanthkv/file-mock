@@ -1,6 +1,5 @@
 package io.kvlabs.filemock.core;
 
-import io.kvlabs.filemock.core.FileMock;
 import io.kvlabs.filemock.core.mapper.Mapper;
 import org.junit.Assert;
 import org.junit.Test;
