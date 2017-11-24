@@ -1,8 +1,8 @@
-package com.kvlabs.filemock;
+package io.kvlabs.filemock;
 
-import com.kvlabs.filemock.mapper.Mapper;
-import com.kvlabs.filemock.mapper.Deserializer;
-import com.kvlabs.filemock.mapper.DeserializerFactory;
+import io.kvlabs.filemock.mapper.Mapper;
+import io.kvlabs.filemock.mapper.Deserializer;
+import io.kvlabs.filemock.mapper.DeserializerFactory;
 
 /**
  *
@@ -19,8 +19,8 @@ public class FileToMock {
      * @param classToMock class or interface to mock
      * @return mock object
      */
-    public static <T> T mock(String filePath, Class<T> classToMock) {
-        return mock(filePath, Mapper.JACKSON_1, true, classToMock);
+    public static <T> T mockFile(String filePath, Class<T> classToMock) {
+        return mockFile(filePath, Mapper.JACKSON_1, true, classToMock);
     }
 
     /**
@@ -33,8 +33,8 @@ public class FileToMock {
      * @param classToMock class or interface to mock
      * @return mock object
      */
-    public static <T> T mock(String filePath, Mapper mapper, Class<T> classToMock) {
-        return mock(filePath, mapper, true, classToMock);
+    public static <T> T mockFile(String filePath, Mapper mapper, Class<T> classToMock) {
+        return mockFile(filePath, mapper, true, classToMock);
     }
 
     /**
@@ -48,7 +48,7 @@ public class FileToMock {
      * @param classToMock class or interface to mock
      * @return mock object
      */
-    public static <T> T mock(String filePath, Mapper mapper, boolean safe, Class<T> classToMock) {
+    public static <T> T mockFile(String filePath, Mapper mapper, boolean safe, Class<T> classToMock) {
         Deserializer deserializer = DeserializerFactory.create(mapper);
         return deserializer.deserialize(filePath, classToMock, safe);
     }

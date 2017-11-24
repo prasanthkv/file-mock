@@ -1,4 +1,4 @@
-package com.kvlabs.filemock.mapper;
+package io.kvlabs.filemock.mapper;
 
 /**
  * Factory class to create Deserializer instance
@@ -17,13 +17,11 @@ public final class DeserializerFactory {
         Deserializer deserializer = null;
         switch (mapper) {
             case JACKSON_1:
-                deserializer = new FileToMockJackson1();
+                deserializer = new Jackson1Deserializer();
                 break;
             case JACKSON_2:
-                deserializer = new FileToMockJackson2();
+                deserializer = new Jackson2Deserializer();
                 break;
-            case GSON:
-                throw new UnsupportedOperationException("Deserializer not yet avilable for the given type");
             default:
                 throw new UnsupportedOperationException("Deserializer not yet avilable for the given type");
         }

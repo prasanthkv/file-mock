@@ -1,6 +1,6 @@
-package com.kvlabs.filemock.anotation;
+package io.kvlabs.filemock.anotation;
 
-import com.kvlabs.filemock.mapper.Mapper;
+import io.kvlabs.filemock.mapper.Mapper;
 import java.lang.annotation.Documented;
 import static java.lang.annotation.ElementType.FIELD;
 import java.lang.annotation.Retention;
@@ -42,12 +42,12 @@ import java.lang.annotation.Target;
  * In above example, <code>initMocks()</code> is called in @Before (JUnit4) method of test's base class.
  * For JUnit3 <code>initMocks()</code> can go to <code>setup()</code> method of a base class.
  * <strong>Instead</strong> you can also put initMocks() in your JUnit runner (@RunWith) or use the built-in
- * {@link com.github.kvlabs.file.mock.runners.FileToMockJUnitRunner}.
+ * {@link io.kvlabs.file.mock.runners.FileToMockJUnitRunner}.
  * </p>
  *
  * @see FileToMock#mock(Class)
  * @see FileToMockAnnotations#initMocks(Object)
- * @see com.kvlabs.filemock.FileToMockAnnotations
+ * @see io.filemock.FileToMockAnnotations
  * @author kanchana-prasanth
  */
 @Documented

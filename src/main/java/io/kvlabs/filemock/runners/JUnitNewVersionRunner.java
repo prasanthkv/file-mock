@@ -1,12 +1,14 @@
-package com.kvlabs.filemock.runners;
+package io.kvlabs.filemock.runners;
 
-import com.kvlabs.filemock.anotation.FileToMockAnnotations;
-import org.junit.internal.runners.InitializationError;
-import org.junit.internal.runners.JUnit4ClassRunner;
+import io.kvlabs.filemock.anotation.FileToMockAnnotations;
 import org.junit.runner.Description;
 import org.junit.runner.manipulation.Filter;
 import org.junit.runner.manipulation.NoTestsRemainException;
 import org.junit.runner.notification.RunNotifier;
+import org.junit.runners.BlockJUnit4ClassRunner;
+import org.junit.runners.model.FrameworkMethod;
+import org.junit.runners.model.Statement;
+import org.junit.runners.model.InitializationError;
 
 /**
  * JUnit runner for older versions 4
@@ -14,9 +16,9 @@ import org.junit.runner.notification.RunNotifier;
  * @author kanchana-prasanth
  */
 @SuppressWarnings("deprecation")
-public class JUnitOldVersionRunner implements RunnerExt {
+public class JUnitNewVersionRunner implements RunnerExt {
 
-    private final JUnit4ClassRunner runner;
+    private final BlockJUnit4ClassRunner runner;
 
     /**
      * Create new instance of JUnit44RunnerImpl
@@ -24,15 +26,14 @@ public class JUnitOldVersionRunner implements RunnerExt {
      * @param klass as type of Class
      * @throws InitializationError
      */
-    public JUnitOldVersionRunner(Class<?> klass) throws InitializationError {
-        this.runner = new JUnit4ClassRunner(klass) {
+    public JUnitNewVersionRunner(Class<?> klass) throws InitializationError {
+        runner = new BlockJUnit4ClassRunner(klass) {
             @Override
-            protected Object createTest() throws Exception {
-                Object test = super.createTest();
-                //initalize file to mock anotations
-                FileToMockAnnotations.initMocks(test);
-                //return the file
-                return test;
+            protected Statement withBefores(FrameworkMethod method, Object target,
+                    Statement statement) {
+                // init annotated mocks before tests
+                FileToMockAnnotations.initMocks(target);
+                return super.withBefores(method, target, statement);
             }
         };
     }

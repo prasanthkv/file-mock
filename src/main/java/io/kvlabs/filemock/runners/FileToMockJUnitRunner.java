@@ -1,4 +1,4 @@
-package com.kvlabs.filemock.runners;
+package io.kvlabs.filemock.runners;
 
 import java.lang.reflect.InvocationTargetException;
 import org.junit.internal.runners.InitializationError;

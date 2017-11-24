@@ -1,4 +1,4 @@
-package com.kvlabs.filemock.mapper;
+package io.kvlabs.filemock.mapper;
 
 /**
  * Supported Deserializer operations

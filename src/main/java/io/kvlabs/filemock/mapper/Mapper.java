@@ -1,4 +1,4 @@
-package com.kvlabs.filemock.mapper;
+package io.kvlabs.filemock.mapper;
 
 /**
  * Supported JSON mapper
@@ -8,6 +8,7 @@ package com.kvlabs.filemock.mapper;
 public enum Mapper {
     JACKSON_1,
     JACKSON_2,
+    MOSHI,
     GSON;
     
     public static final Mapper DEFAULT = JACKSON_1;

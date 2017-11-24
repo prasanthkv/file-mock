@@ -1,4 +1,4 @@
-package com.kvlabs.filemock.exception;
+package io.kvlabs.filemock.exception;
 
 /**
  * {@code JsonMappingException} is the superclass of those RuntimeException that

@@ -1,4 +1,4 @@
-package com.kvlabs.filemock.runners;
+package io.kvlabs.filemock.runners;
 
 import org.junit.runner.Description;
 import org.junit.runner.manipulation.Filterable;
