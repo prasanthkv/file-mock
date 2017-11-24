@@ -22,6 +22,12 @@ public final class DeserializerFactory {
             case JACKSON_2:
                 deserializer = new Jackson2Deserializer();
                 break;
+            case GSON:
+                deserializer = new GsonDeserializer();
+                break;
+            case MOSHI:
+                deserializer = new MoshiDeserializer();
+                break;
             default:
                 throw new UnsupportedOperationException("Deserializer not yet avilable for the given type");
         }
