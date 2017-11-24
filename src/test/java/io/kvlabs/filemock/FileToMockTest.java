@@ -122,6 +122,15 @@ public class FileToMockTest {
         Jackson1SamplePojo result = FileToMock.mockFile(PARSE_ERROR, Mapper.JACKSON_1, false, Jackson1SamplePojo.class);
     }
 
+
+    /**
+     * Test of mock method, of class FileToMock.
+     */
+    @Test(expected = io.kvlabs.filemock.exception.FileNotFoundException.class)
+    public void testMock_noSuchFile() {
+        Jackson1SamplePojo result = FileToMock.mockFile("nosuhfile.json", Mapper.JACKSON_1, false, Jackson1SamplePojo.class);
+    }
+
     /**
      * Test of mock method, of class FileToMock.
      */
