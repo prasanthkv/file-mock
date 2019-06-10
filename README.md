@@ -1,5 +1,7 @@
 # {FileMock}  ![version](https://img.shields.io/badge/version-1.0.0-orange.svg?style=flat) ![License: MIT](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/29beb903706244c4926687fd750e1100)](https://app.codacy.com/app/prasanthkv/file-mock?utm_source=github.com&utm_medium=referral&utm_content=prasanthkv/file-mock&utm_campaign=badger)
+
 
 FileMock is a simple yet powerful java library to convert Jason file into objects while writing unit tests. Most of the time writing unit test made difficult by creating nested service response. creating a proper input object may take hundreds of lines and hours of dev effort. `FileMock` is designed to reduce this effort by simply saving the response as JSON files and annotate the path in your test file.
 
